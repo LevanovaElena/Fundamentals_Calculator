@@ -1,6 +1,7 @@
 ﻿using System;
 using Xunit;
 using Fundamentals;
+using System.Collections.Generic;
 
 namespace Fundamentals.Test
 {
@@ -32,8 +33,7 @@ namespace Fundamentals.Test
             Assert.Equal("Your result: -3\n", userOutput);
             userOutput = Program.Output("g", 2, 5);
             Assert.Equal("This operation will result in a mathematical error.\n", userOutput);
-            userOutput = Program.Output("g", 2, 5);
-            Assert.Equal("Oh no! An exception occurred trying to do the math.\n", userOutput);
+
 
         }
 
@@ -47,15 +47,20 @@ namespace Fundamentals.Test
 
     public class MockConsoleWrapper: IConsoleWrapper
     {
-        int count = 0;
+        Queue<string> numbers = new Queue<string>();
+
+        public MockConsoleWrapper()
+        {
+            numbers.Enqueue("2"); ///2
+            numbers.Enqueue("5"); //2,5
+            numbers.Enqueue("a"); //2,5,a
+            numbers.Enqueue("n");//2,5,a,n
+        }
+
+
         public string ReadLine()
         {
-            count++;
-            if (count == 1) return "2";
-            if (count==2)return "5";
-            if (count == 3) return "a";
-            return "n";
-
+            return numbers.Dequeue(); 
         }
     }
 
