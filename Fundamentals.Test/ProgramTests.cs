@@ -26,8 +26,8 @@ namespace Fundamentals.Test
             string userOutput = Program.Output("a", 2, 5);
             Assert.Equal("Your result: 7\n", userOutput);
 
-            userOutput = Program.Output("d", 2, 5);
-            Assert.Equal("Your result: 0,4\n", userOutput);
+            userOutput = Program.Output("d", 10, 5);
+            Assert.Equal("Your result: 2\n", userOutput);
 
             userOutput = Program.Output("m", 2, 5);
             Assert.Equal("Your result: 10\n", userOutput);

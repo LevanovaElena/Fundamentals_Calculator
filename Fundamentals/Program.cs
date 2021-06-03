@@ -18,7 +18,7 @@ namespace Fundamentals
                 // Declare variables and set to empty.
                 string numInput1 = "";
                 string numInput2 = "";
-                double result = 0;
+
 
                 // Ask the user to type the first number.
                 Console.Write("Type a number, and then press Enter: ");
@@ -78,7 +78,7 @@ namespace Fundamentals
                 else outLine = "Your result: "+result+"\n";
                 return outLine;
             }
-            catch (Exception e)
+            catch ()
             {
                 return outLine="Oh no! An exception occurred trying to do the math.\n";
             }
