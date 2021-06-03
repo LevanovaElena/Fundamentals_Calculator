@@ -78,7 +78,7 @@ namespace Fundamentals
                 else outLine = "Your result: "+result+"\n";
                 return outLine;
             }
-            catch ()
+            catch
             {
                 return outLine="Oh no! An exception occurred trying to do the math.\n";
             }
